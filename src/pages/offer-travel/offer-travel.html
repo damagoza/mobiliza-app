@@ -1,0 +1,37 @@
+<!--
+  Generated template for the OfferTravelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<form [formGroup]="formOfferTravel">
+		<ion-item>
+			<ion-input type="email" formControlName="email" placeholder="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-input type="password" formControlName="password" placeholder="password"></ion-input>
+		</ion-item>
+		<p>{{message}}</p>
+		<button ion-button (click)="loadAddVehiclePage()" block>Agregar vehiculo</button>
+		<button ion-button (click)="signIn()" block>Login</button>
+		<ion-row>
+			<ion-col col-6 padding>
+				<button ion-button color="light" (click)="loadSignUp()">SignUp</button>			
+			</ion-col>			
+			<ion-col col-6 padding>
+				<button ion-button color="light" (click)="loadRememberMyPassword()">Remember</button>			
+			</ion-col>
+		</ion-row>						
+	</form>  
+  
+</ion-content>
