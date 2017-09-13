@@ -6,20 +6,32 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SignInPage } from '../pages/sign-in/sign-in';
+import { SignUpPage } from '../pages/sign-up/sign-up';
+import { RememberMyPasswordPage } from '../pages/remember-my-password/remember-my-password';
+
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SignInPage, 
+    SignUpPage,
+    RememberMyPasswordPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SignInPage, 
+    SignUpPage,
+    RememberMyPasswordPage
   ],
   providers: [
     StatusBar,
