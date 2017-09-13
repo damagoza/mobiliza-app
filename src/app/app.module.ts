@@ -11,6 +11,8 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
 import { RememberMyPasswordPage } from '../pages/remember-my-password/remember-my-password';
 
 import { HttpModule } from '@angular/http';
+import { MobilizaDataProvider } from '../providers/mobiliza-data/mobiliza-data';
+import { UserProvider } from '../providers/user/user';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MobilizaDataProvider,
+    UserProvider
   ]
 })
 export class AppModule {}

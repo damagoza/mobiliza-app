@@ -12,7 +12,7 @@ import { RememberMyPasswordPage } from '../remember-my-password/remember-my-pass
 })
 export class HomePage {
 
-	title = "Mobiliza prueba"
+	title = "Mobiliza"
 	constructor(public navCtrl: NavController) {
 
 	}

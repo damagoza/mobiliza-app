@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>sign-up</ion-title>
+    <ion-title>signUp</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-	sign-up
+<ion-content>
+	<form [formGroup]="formSignUp">
+		<ion-item>
+			<ion-input type="email" formControlName="email"  placeholder="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-input type="password" formControlName="password" placeholder="password"></ion-input>
+		</ion-item>
+		<p>{{message}}</p>
+		<button ion-button (click)="signUp()" block>SignUp</button>
+		<ion-row>
+			<ion-col col-6 padding>
+				<button ion-button color="light" (click)="loadSignIn()">SignIn</button>			
+			</ion-col>			
+			<ion-col col-6 padding>
+				<button ion-button color="light" (click)="loadRememberMyPassword()">Remember</button>			
+			</ion-col>							
+		</ion-row>			
+	</form>
 </ion-content>
