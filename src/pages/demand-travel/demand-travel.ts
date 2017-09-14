@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ShowTravelPage } from '../show-travel/show-travel';
+
 import { MobilizaDataProvider } from '../../providers/mobiliza-data/mobiliza-data';
 import { UserProvider } from '../../providers/user/user';
 import { User} from '../../obj/user';
@@ -31,6 +33,10 @@ export class DemandTravelPage {
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad DemandTravelPage');
+	}
+	
+	loadShowTrave(travel){
+		this.navCtrl.push(ShowTravelPage, travel)
 	}
 
 }

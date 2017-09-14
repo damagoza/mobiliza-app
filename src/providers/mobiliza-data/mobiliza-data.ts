@@ -13,8 +13,8 @@ import { User } from '../../obj/user';
 @Injectable()
 export class MobilizaDataProvider {
 
-  url = 'http://localhost:3000/api/'
-  // url = 'https://mobiliza-damagoza.c9users.io/api/'
+  //url = 'http://localhost:3000/api/'
+  url = 'https://mobiliza-damagoza.c9users.io/api/'
 
   constructor(public http: Http) {
     console.log('Hello MobilizaDataProvider');

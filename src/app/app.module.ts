@@ -13,6 +13,7 @@ import { InicioPage } from '../pages/inicio/inicio';
 import { AddVehiclePage } from '../pages/add-vehicle/add-vehicle';
 import { DemandTravelPage } from '../pages/demand-travel/demand-travel';
 import { OfferTravelPage } from '../pages/offer-travel/offer-travel';
+import { ShowTravelPage } from '../pages/show-travel/show-travel';
 
 import { HttpModule } from '@angular/http';
 import { MobilizaDataProvider } from '../providers/mobiliza-data/mobiliza-data';
@@ -28,7 +29,8 @@ import { UserProvider } from '../providers/user/user';
     InicioPage, 
     AddVehiclePage,
     DemandTravelPage,
-    OfferTravelPage
+    OfferTravelPage,
+    ShowTravelPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { UserProvider } from '../providers/user/user';
     InicioPage, 
     AddVehiclePage,
     DemandTravelPage,
-    OfferTravelPage
+    OfferTravelPage,
+    ShowTravelPage
   ],
   providers: [
     StatusBar,

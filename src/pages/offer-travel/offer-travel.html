@@ -16,6 +16,7 @@
 <ion-content>
 	<form [formGroup]="formOfferTravel">
 		<ion-item>
+			<label>Vehículo</label>
 			<ion-select formControlName="vechicle_id">
 			  <ion-option [value]="item.id" *ngFor="let item of vehicles">{{item.model}} &nbsp;&nbsp;{{item.price}}</ion-option> 
 			</ion-select>
