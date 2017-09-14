@@ -5,6 +5,8 @@ import { AddVehiclePage } from '../add-vehicle/add-vehicle';
 
 import { MobilizaDataProvider } from '../../providers/mobiliza-data/mobiliza-data';
 import { UserProvider } from '../../providers/user/user';
+import { User} from '../../obj/user';
+
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { NgForm } from '@angular/forms';
@@ -25,20 +27,53 @@ export class OfferTravelPage {
   
   formOfferTravel: FormGroup
   title = "Ofrecer viaje"
+  vehicles = []
+  message = ''
+  currentUser = {'id': '', 'emai': '', 'birthday': '', 'created_at': '', 'updated_at': ''}
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public mobilizaDataProvider: MobilizaDataProvider, private formBuilder: FormBuilder, public userProvider: UserProvider) {
+    this.currentUser = this.userProvider.getUser().user
+    this.mobilizaDataProvider.requestPost({'id':this.currentUser.id.toString()}, 'vechicle/vechicle_for_user').subscribe(vehiclesData => this.vehicles = vehiclesData) // inicializa el select de las ciudades        
 		this.formOfferTravel = formBuilder.group({
-		  email: 'damagoza@gmail.com',      
-		  password: 'cataratas'      
+      user_id: this.currentUser.id.toString(),
+      vechicle_id: '', 
+      coordenada_start: '36.997644',
+      coordenada_end: '-3.177966',
+      name_start: 'Alpujarra',
+      name_end: 'Estación floresta',
+      state: true
 		})		    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OfferTravelPage');
   }
+
+  handleSuccess(data){
+    if (data.state == true) { 
+      console.log("Oferta de viaje creada")
+      console.log(data)
+    } else {
+      this.message = data.message
+    }
+
+  }
+
+  handleHerror(error){
+    console.log(error)
+  }    
   
   loadAddVehiclePage(){
     this.navCtrl.push(AddVehiclePage, {})
   }
 
+  createOfferTravel(){
+    return this.mobilizaDataProvider.requestPost(this.formOfferTravel.value, 'offer_travel/create').subscribe(
+      data => this.handleSuccess(data),
+      error => this.handleHerror(error)
+    )
+  }
+
 }
+
+

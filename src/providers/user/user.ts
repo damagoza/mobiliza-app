@@ -12,7 +12,7 @@ import { User } from '../../obj/user';
 @Injectable()
 export class UserProvider {
 
-  public currentUser = User
+  public currentUser  
   public userSignIn
 
   constructor(public http: Http) {
