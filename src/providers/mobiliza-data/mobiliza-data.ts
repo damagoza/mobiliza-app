@@ -22,6 +22,7 @@ export class MobilizaDataProvider {
 
   requestPost(data, path){ // funcional
     console.log('peticion a : ' + this.url+path)
+    console.log('llego data =  ' + data.state)
     return this.http.post(this.url+path, data)
       .map(res => res.json())
   }

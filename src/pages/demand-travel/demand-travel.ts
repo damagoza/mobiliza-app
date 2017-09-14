@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { MobilizaDataProvider } from '../../providers/mobiliza-data/mobiliza-data';
+import { UserProvider } from '../../providers/user/user';
+import { User} from '../../obj/user';
+
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { NgForm } from '@angular/forms';
+
 /**
  * Generated class for the DemandTravelPage page.
  *
@@ -15,11 +23,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DemandTravelPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	offerTravels = []
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DemandTravelPage');
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams, public mobilizaDataProvider: MobilizaDataProvider, private formBuilder: FormBuilder, public userProvider: UserProvider) {
+    	this.mobilizaDataProvider.requestPost({'state':true}, 'offer_travel/travel_for_state').subscribe(offerTravelsData => this.offerTravels = offerTravelsData)
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad DemandTravelPage');
+	}
 
 }

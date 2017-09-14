@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
-  demand travel
+	<ion-list>
+	  <button ion-item *ngFor="let item of offerTravels" (click)="itemSelected(item)">
+	    {{ item.name_start }} - {{ item.name_end }}
+	  </button>  
+	</ion-list>
 </ion-content>
