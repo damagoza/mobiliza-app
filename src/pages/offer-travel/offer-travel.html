@@ -15,13 +15,22 @@
 
 <ion-content>
 	<form [formGroup]="formOfferTravel">
-		<ion-item>
-			<label>Vehículo</label>
-			<ion-select formControlName="vechicle_id">
-			  <ion-option [value]="item.id" *ngFor="let item of vehicles">{{item.model}} &nbsp;&nbsp;{{item.price}}</ion-option> 
-			</ion-select>
-			<button ion-button (click)="loadAddVehiclePage()" block>Agregar vehiculo</button>
-		</ion-item>		
+		<ion-grid>
+			<ion-row>
+				<ion-col col-9>
+					<ion-item>
+						<ion-label>Vehículo</ion-label>
+						<ion-select formControlName="vechicle_id">
+						  <ion-option [value]="item.id" *ngFor="let item of vehicles">{{item.model}} &nbsp;&nbsp;{{item.price}}</ion-option>  
+						</ion-select>			
+					</ion-item>		
+				</ion-col>
+				<ion-col col-3>
+					<button ion-button color="" round (click)="loadAddVehiclePage()">+</button>					
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
 
 		<ion-item>
 			<ion-input type="text" formControlName="name_start" placeholder="origen"></ion-input>

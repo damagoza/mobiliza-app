@@ -13,16 +13,16 @@ import { User } from '../../obj/user';
 @Injectable()
 export class MobilizaDataProvider {
 
-  //url = 'http://localhost:3000/api/'
-  url = 'https://mobiliza-damagoza.c9users.io/api/'
+  url = 'http://localhost:3000/api/'
+  // url = 'https://mobiliza-damagoza.c9users.io/api/'
 
   constructor(public http: Http) {
     console.log('Hello MobilizaDataProvider');
   }
 
   requestPost(data, path){ // funcional
-    console.log('peticion a : ' + this.url+path)
-    console.log('llego data =  ' + data.state)
+    console.log('[POST] peticion a : ' + this.url+path)
+    console.log('[POST] llego data =  ' + data)
     return this.http.post(this.url+path, data)
       .map(res => res.json())
   }

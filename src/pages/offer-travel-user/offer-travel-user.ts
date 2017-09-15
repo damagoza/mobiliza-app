@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { NgForm } from '@angular/forms';
 
 /**
- * Generated class for the DemandTravelPage page.
+ * Generated class for the OfferTravelUserPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -20,23 +20,26 @@ import { NgForm } from '@angular/forms';
 
 @IonicPage()
 @Component({
-  selector: 'page-demand-travel',
-  templateUrl: 'demand-travel.html',
+  selector: 'page-offer-travel-user',
+  templateUrl: 'offer-travel-user.html',
 })
-export class DemandTravelPage {
+export class OfferTravelUserPage {
 
 	offerTravels = []
+	currentUser = {'id': '', 'emai': '', 'birthday': '', 'created_at': '', 'updated_at': ''}
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public mobilizaDataProvider: MobilizaDataProvider, private formBuilder: FormBuilder, public userProvider: UserProvider) {
-    	this.mobilizaDataProvider.requestPost({'state':true}, 'offer_travel/travel_for_state').subscribe(offerTravelsData => this.offerTravels = offerTravelsData)
+		this.currentUser = this.userProvider.getUser().user
+		this.mobilizaDataProvider.requestPost({'user_id':this.currentUser.id.toString()}, 'offer_travel/for_user').subscribe(offerTravelsData => this.offerTravels = offerTravelsData)
+		console.log(this.offerTravels)
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad DemandTravelPage');
+		console.log('ionViewDidLoad OfferTravelUserPage');
 	}
-	
+
 	loadShowTravel(travel){
 		this.navCtrl.push(ShowTravelPage, travel)
-	}
+	}	
 
 }

@@ -6,22 +6,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content text-center>
-	<ion-grid>
-		<ion-row center>
+<ion-content style="margin: 0 auto;">
+	<ion-grid text-center style="">
+		<ion-row>
 			<ion-col col-12>
-				<button ion-button (click)="loadSignIn()">Sign In</button>
+				<button ion-button (click)="loadSignIn()" style="width: 100%;">Sign In</button>
 			</ion-col>
 		</ion-row>
-		<ion-row center>
+		<ion-row>
 			<ion-col col-12>
-				<button ion-button (click)="loadSignUp()">Sign Up </button>
+				<button ion-button (click)="loadSignUp()" style="width: 100%;">Sign Up </button>
 			</ion-col>
 		</ion-row>
-		<ion-row center>
+		<ion-row>
 			<ion-col col-12>
-				<button ion-button (click)="loadRememberMyPassword()">Remember My Password </button>
+				<button ion-button (click)="loadRememberMyPassword()" style="width: 100%;">Remember My Password </button>
 			</ion-col>
 		</ion-row>				
-	</ion-grid>	
+	</ion-grid>				
 </ion-content>

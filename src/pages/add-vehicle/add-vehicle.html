@@ -16,6 +16,7 @@
 <ion-content padding>
 	<form [formGroup]="formAddVehicle">
 		<ion-item>
+			<ion-label>Tipo</ion-label>
 			<ion-select formControlName="type_vehicle_id">
 			  <ion-option [value]="item.id" *ngFor="let item of typeVehicles">{{item.name}} &nbsp;&nbsp;{{item.price}}</ion-option> 
 			</ion-select>
@@ -26,4 +27,5 @@
 		</ion-item>
 		<button ion-button (click)="addVehiculo()" block>Agregar vehículo</button>
 	</form>
+	{{message}}
 </ion-content>

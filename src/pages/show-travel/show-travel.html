@@ -1,5 +1,5 @@
 <!--
-  Generated template for the ShowTravelPage page.
+  Generated template for the ShowOfferTravelPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ShowTravel</ion-title>
+    <ion-title>ShowOfferTravel</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,26 +25,26 @@
 
   <ion-item>
     <ion-icon name="arrow-forward" item-start large></ion-icon>
-    <h2>{{travel.name_start}}</h2>
+    <h2>{{OfferTravel.name_start}}</h2>
     <p>11 N. Way St, Madison, WI 53703</p>
   </ion-item>
 
   <ion-item>
     <ion-icon name="arrow-down" item-left large ></ion-icon>
-    <h2>{{travel.name_end}}</h2>
+    <h2>{{OfferTravel.name_end}}</h2>
     <p>14 S. Hop Avenue, Madison, WI 53703</p>
   </ion-item>
   
   <ion-item>
     <ion-icon name="car" item-left large ></ion-icon>
-    <h2>{{travel.vechicle.model}}</h2>
+    <h2>{{OfferTravel.vechicle.model}}</h2>
     <p>14 S. Hop Avenue, Madison, WI 53703</p>
   </ion-item>  
 
   <ion-item>
     <span item-left>18 min</span>
     <span item-left>(2.6 mi)</span>
-    <button ion-button icon-left clear item-end>
+    <button ion-button icon-left clear item-end (click)="createDemand(OfferTravel)">
       <ion-icon name="navigate"></ion-icon>
       Tomar Viaje
     </button>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DemandTravelPage } from '../demand-travel/demand-travel';
 import { OfferTravelPage } from '../offer-travel/offer-travel';
+import { DemandTravelUserPage } from '../demand-travel-user/demand-travel-user';
+import { OfferTravelUserPage } from '../offer-travel-user/offer-travel-user';
 /**
  * Generated class for the InicioPage page.
  *
@@ -30,5 +32,14 @@ export class InicioPage {
 	loadOfferTravelPage(){
 		this.navCtrl.push(OfferTravelPage, {})
 	}  
+
+
+  loadOfferTravelUserPage(){
+    this.navCtrl.push(OfferTravelUserPage, {})
+  }
+
+  loadDemandlUserPage(){
+    this.navCtrl.push(DemandTravelUserPage, {})
+  }    
 
 }

@@ -14,6 +14,9 @@ import { AddVehiclePage } from '../pages/add-vehicle/add-vehicle';
 import { DemandTravelPage } from '../pages/demand-travel/demand-travel';
 import { OfferTravelPage } from '../pages/offer-travel/offer-travel';
 import { ShowTravelPage } from '../pages/show-travel/show-travel';
+import { DemandTravelUserPage } from '../pages/demand-travel-user/demand-travel-user';
+import { OfferTravelUserPage } from '../pages/offer-travel-user/offer-travel-user';
+
 
 import { HttpModule } from '@angular/http';
 import { MobilizaDataProvider } from '../providers/mobiliza-data/mobiliza-data';
@@ -30,7 +33,9 @@ import { UserProvider } from '../providers/user/user';
     AddVehiclePage,
     DemandTravelPage,
     OfferTravelPage,
-    ShowTravelPage
+    ShowTravelPage,
+    DemandTravelUserPage,
+    OfferTravelUserPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,9 @@ import { UserProvider } from '../providers/user/user';
     AddVehiclePage,
     DemandTravelPage,
     OfferTravelPage,
-    ShowTravelPage
+    ShowTravelPage,
+    DemandTravelUserPage,
+    OfferTravelUserPage
   ],
   providers: [
     StatusBar,

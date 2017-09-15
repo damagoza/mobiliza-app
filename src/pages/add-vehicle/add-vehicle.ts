@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { OfferTravelPage } from '../offer-travel/offer-travel';
+
 import { MobilizaDataProvider } from '../../providers/mobiliza-data/mobiliza-data';
 import { UserProvider } from '../../providers/user/user';
 import { User} from '../../obj/user';
@@ -33,7 +35,7 @@ export class AddVehiclePage {
 		this.formAddVehicle = formBuilder.group({ // inicializamos el formulario sign up
 			user_id: this.currentUser.id,
 			type_vehicle_id: '',
-			model: 'cualquier cosa'
+			model: ''
 		});  			
 	}
 
@@ -42,12 +44,15 @@ export class AddVehiclePage {
 	}
 
 	handleSuccess(data){
+		console.log("enrto a handlesucces " + data)
 		if (data.state == true) { 
-			console.log("Vehículo creado")
+			console.log("Esta if")
+			
 		} else {
-		  this.message = data.message
+			console.log("Esta else")			
+		  	this.message = data.message
 		}
-
+		this.navCtrl.push(OfferTravelPage, {})
 	}
 
 	handleHerror(error){

@@ -14,16 +14,22 @@
 
 
 <ion-content padding>
-	<ion-grid>
+	<ion-grid text-center>
 		<ion-row center>
-			<ion-col col-12>
-				<button ion-button (click)="loadDemandTravelPage()">Necesitas transporte</button>
+			<ion-col col-6>
+				<button ion-button (click)="loadDemandTravelPage()">Buscar transporte</button>
 			</ion-col>
+			<ion-col col-6>
+				<button ion-button (click)="loadDemandlUserPage()">View</button>
+			</ion-col>			
 		</ion-row>
 		<ion-row center>
-			<ion-col col-12>
-				<button ion-button (click)="loadOfferTravelPage()">Ofreces transporte</button>
+			<ion-col col-6>
+				<button ion-button (click)="loadOfferTravelPage()">Ofrecer transporte</button>
 			</ion-col>
+			<ion-col col-6>
+				<button ion-button (click)="loadOfferTravelUserPage()">View</button>
+			</ion-col>						
 		</ion-row>
 	</ion-grid>	
 </ion-content>
