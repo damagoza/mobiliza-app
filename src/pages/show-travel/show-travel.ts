@@ -5,6 +5,8 @@ import { MobilizaDataProvider } from '../../providers/mobiliza-data/mobiliza-dat
 import { UserProvider } from '../../providers/user/user';
 import { User} from '../../obj/user';
 
+import { DemandTravelUserPage } from '../demand-travel-user/demand-travel-user';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import {NgForm} from '@angular/forms';
 import { ToastController } from 'ionic-angular';
@@ -82,6 +84,7 @@ export class ShowTravelPage {
         } else {
             this.showToast('top', data.message)
         }
+        this.loadDemandlUserPage()
 
     }
 
@@ -96,5 +99,9 @@ export class ShowTravelPage {
           error => this.handleHerror(error)
         )        
     }
+
+  loadDemandlUserPage(){
+    this.navCtrl.push(DemandTravelUserPage, {})
+  }        
 
 }

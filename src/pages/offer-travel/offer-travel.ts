@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AddVehiclePage } from '../add-vehicle/add-vehicle';
+import { OfferTravelUserPage } from '../offer-travel-user/offer-travel-user';
 
 import { MobilizaDataProvider } from '../../providers/mobiliza-data/mobiliza-data';
 import { UserProvider } from '../../providers/user/user';
 import { User} from '../../obj/user';
-
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { NgForm } from '@angular/forms';
@@ -39,8 +39,8 @@ export class OfferTravelPage {
       vechicle_id: '', 
       coordenada_start: '36.997644',
       coordenada_end: '-3.177966',
-      name_start: 'Alpujarra',
-      name_end: 'Estación floresta',
+      name_start: '',
+      name_end: '',
       state: true
 		})		    
   }
@@ -51,11 +51,11 @@ export class OfferTravelPage {
 
   handleSuccess(data){
     if (data.state == true) { 
-      console.log("Oferta de viaje creada")
-      console.log(data)
+
     } else {
       this.message = data.message
     }
+    this.loadOfferTravelUserPage()
 
   }
 
@@ -73,6 +73,10 @@ export class OfferTravelPage {
       error => this.handleHerror(error)
     )
   }
+
+  loadOfferTravelUserPage(){
+    this.navCtrl.push(OfferTravelUserPage, {})
+  }  
 
 }
 
